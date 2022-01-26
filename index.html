@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>TZone-Главная страница</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta charset="utf-8"/>
+    <style>
+      .container{
+        width:100%;
+        height:40px;
+        background:#212121;
+      }
+      body{
+        background: black;
+      }
+      #font{
+        font-weight: bold;
+      }
+      #profile_redirect{
+        color:white;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"><a id="profile_redirect"></a></div><br>
+    <center><font id="font" color="white">Здесь пока пусто,но в  будущем что-то появится</font></center>
+  
+  <script>
+    if(localStorage.getItem("username")==""|| localStorage.getItem("username")==null || localStorage.getItem("username")==undefined){
+      var redirect =document.getElementById("profile_redirect");
+      redirect.href="auth.html";
+      redirect.innerHTML="Зарегистрироваться";
+      redirect.onclick=function(){
+        redirect.style.color="red";
+        
+      }
+    }
+      else{
+var redirect =document.getElementById("profile_redirect");
+var name = localStorage.getItem("username");
+redirect.href ="profile.html";
+redirect.innerHTML=username;
+redirect.style.color="orange";
+      
+    }
+  </script>
+  </body>
+</html>

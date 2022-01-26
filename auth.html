@@ -1,0 +1,121 @@
+<html>
+  <head>
+    <title>Вход/регистрация</title>
+    <meta charset='utf-8'/>
+    <style>
+      body{
+        background: black;
+      }
+      #username::placeholder{
+        color:white;
+      }
+      #password::placeholder{
+        color:white;
+      }
+      
+    </style>
+    </head>
+    <body>
+
+      <center id="form">
+        
+      </center>
+    
+  <script>
+    var form = document.getElementById("form");
+    var div = document.createElement("div");
+    div.id="login-form";
+    div.style.margin="100px";
+    form.appendChild(div);
+    var user= document.createElement("input");
+    user.type="text";
+   user.id="username";
+   
+   user.placeholder="Введите никнейм";
+   user.style.backgroundColor="#212121";
+   user.style.border="1px solid #212121";
+   user.style.borderRadius="10px";
+   
+   div.appendChild(user);
+   var br= document.createElement("div");
+   ;
+   div.appendChild(br);
+   var pass= document.createElement("input");
+    pass.type="text";
+   pass.id="password";
+   pass.style.margin="5px";
+   pass.placeholder="Введите пароль";
+   pass.style.backgroundColor="#212121";
+   pass.style.border="1px solid #212121";
+   pass.style.borderRadius="10px";
+   div.appendChild(pass);
+   var a = document.createElement("a");
+   a.href="#reg-form";
+   a.onclick=function(){ regForm(); };
+   a.style.textDecoration="none";
+   a.style.color="orange";
+   
+   a.innerHTML="Создать аккаунт";
+   div.appendChild(a);
+   var btn = document.createElement("button");
+   btn.onclick=function(){
+     if(user.value!==""||user.value!==null){Login(user.value,pass.value)};};
+ btn.innerHTML="Войти";
+ btn.style.backgroundColor="orange";
+ btn.style.color="white";
+ div.appendChild(btn);
+ btn.style.border="1px solid orange";
+ btn.style.width="100px";
+ btn.style.height="30px";
+ btn.style.fontWeight="bold";
+ btn.style.fontSize="20px";
+  </script>
+  <script>
+    
+function regForm(){
+  document.getElementById("login-form").remove();
+  var reg = document.createElement("div");
+  var form = document.getElementById("form");
+  reg.id="reg-form" ;
+  reg.style.margin="100px";
+  form.appendChild(reg);
+  var user= document.createElement("input");
+    user.type="text";
+   user.id="username";
+   
+   user.placeholder="Введите никнейм";
+   user.style.backgroundColor="#212121";
+   user.style.border="1px solid #212121";
+   user.style.borderRadius="10px";
+   user.style.margin="5px";
+   reg.appendChild(user);
+   var pass= document.createElement("input");
+   pass.id="password";
+   pass.placeholder="Введите пароль";
+   pass.style.backgroundColor="#212121";
+   pass.style.border="1px solid #212121";
+   pass.style.borderRadius="10px";
+   reg.appendChild(pass);
+   var btn = document.createElement("button");
+   btn.onclick=function(){
+     if(user.value!==""||user.value!==null){Reg(user.value,pass.value)};};
+ btn.innerHTML="Зарегистрироваться";
+ btn.style.backgroundColor="orange";
+ btn.style.color="white";
+ div.appendChild(btn);
+ btn.style.border="1px solid orange";
+ btn.style.width="120px";
+ btn.style.height="30px";
+ btn.style.fontWeight="bold";
+ btn.style.fontSize="13px";
+ reg.appendChild(btn);
+}
+  </script>
+  <script src="index.js">
+    
+  </script>
+  <script src="index2.js">
+    
+  </script>
+  </body>
+</html>
